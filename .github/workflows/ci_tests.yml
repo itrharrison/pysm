@@ -80,7 +80,6 @@ jobs:
         python -m pip install tox psutil codecov numpy
     - name: Test with tox
       run: |
-        pip install "pixell >= 0.23.14"
         tox -e ${{ matrix.toxenv }}
     - name: MPI test
       if: contains(matrix.toxenv, 'alldeps')
